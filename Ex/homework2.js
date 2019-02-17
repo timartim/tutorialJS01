@@ -1,6 +1,6 @@
 ﻿//https://jsfiddle.net/zoxLnwps/3/
-https://jsfiddle.net/24b8j3yL/2/
-https://jsfiddle.net/avyjd8m5/
+//https://jsfiddle.net/24b8j3yL/2/
+//https://jsfiddle.net/avyjd8m5/
 var drawColumns = function (columnsNumber, indentSize, ctx) {
     var height = ctx.canvas.height;
     var width = ctx.canvas.width;
