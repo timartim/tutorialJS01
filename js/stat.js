@@ -11,6 +11,7 @@ var cloud = function (ctx) {
         var times = new Array();
         var names = new Array();
         var score = new Array();
+        var max = new Array();
         var scoreondiagram = new Array();
         names[0] = "you";
         names[1] = "1 player";
@@ -39,22 +40,74 @@ var cloud = function (ctx) {
         ctx.lineTo(100, 10);
         ctx.fill();
         ctx.stroke();
-        
-        for (var g = 0; g < 4; g++) {
-            if (g == 0) {
-                ctx.style = Bargba(255, 0, 0, 1);
+        if (names[0] > names[1]) {
+            max[0] = names[0];
 
-            } else {
-                ctx.style = blue;
+        } else { 
+            if (names[0] < names[1]) 
+            {
+                max[1] = names[1]; 
+
             }
-            ctx.fillrect(x, y, scoreondiagram, 40);
-            x = x + 90;
+            if (names[1] > names[2]) {
+                max[1] = names[1];
 
-        }
+            } else { 
+                if (names[1] < names[2]) 
+                {
+                    max[1] = names[2]; 
+
+                }
+
+
+                if (max[0] > max[1]) {
+                    max[2] = max[0];
+
+                } else { 
+                    if (max[0] < max[1]) 
+                    {
+                        max[2] = max[1]; 
+
+                    }
+                    scoreondiagramm[0]=max[3];
+                    scoreondiagramm[1]=max[2];
+                    scoreondiagramm[2]=max[1];
+                    scoreondiagramm[3]=max[0];
+
+                    var scorekoeff = max[2]/150;
+                    scoreondiagramm[0] = 150;
+                    scoreondiagramm[1] = score[1]/scorekoeff; 
+                    scoreondiagramm[2] = score[2]/scorekoeff; 
+                    scoreondiagramm[3] = score[3]/scorekoeff; 
+
+                    var x =45;
+                    var y = 120;
+                    for (var k=0;k<5;k=k+1){
+                        void ctx.fillText(names[k], x,y [ maxWidth]);
+                        x=x+45;
+            
+                    }
+          
+            
+
+
+
+
+
+                    for (var g = 0; g < 4; g++) {
+                        if (g == 0) {
+                            ctx.style = Bargba(255, 0, 0, 1);
+
+                        } else {
+                            ctx.style = blue;
+                        }
+                        ctx.fillrect(x, y, scoreondiagram[g], 40);
+                        x = x + 90;
+
+                    }
     
 
 
 
 
-    //}
-}
+                
